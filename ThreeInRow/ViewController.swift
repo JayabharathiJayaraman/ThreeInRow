@@ -12,23 +12,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var threeInRow: UILabel!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var twoPlayersButton: UIButton!
-    let segueToBoard = "segueToBoard"
+    let segueToPlayerName = "segueToPlayerName"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         //playButton.layer.cornerRadius = 5
         //playButton.layer.masksToBounds = true
         customizePlayButton(buttonName: playButton)
         customizeTwoPlayerButton(buttonName: twoPlayersButton)
         threeInRow.font = UIFont(name: "ChalkboardSE-Bold", size: threeInRow.font.pointSize)
-        playButton.titleLabel?.font =  UIFont(name: "ChalkboardSE-Bold", size: 20)
-        twoPlayersButton.titleLabel?.font =  UIFont(name: "ChalkboardSE-Bold", size: 20)
+        
+        playButton.titleLabel?.font =  UIFont(name: "Chalkduster", size: 20)
+        twoPlayersButton.titleLabel?.font =  UIFont(name: "Chalkduster", size: 20)
 
     }
     
 
-    @IBAction func buttonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: segueToBoard, sender: self)
+    @IBAction func twoPlayersButton(_ sender: UIButton) {
+        performSegue(withIdentifier: segueToPlayerName, sender: self)
     }
    
     func customizePlayButton(buttonName:UIButton) {

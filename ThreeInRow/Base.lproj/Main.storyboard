@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,31 +11,31 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ThreeInRow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="segueToBoard" id="BYZ-38-t0r" customClass="ViewController" customModule="ThreeInRow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uk9-Qc-W2e">
-                                <rect key="frame" x="136" y="424" width="144" height="48"/>
+                                <rect key="frame" x="136" y="428" width="144" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" red="0.22727397000137783" green="0.18841334224687944" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="imageEdgeInsets" minX="25" minY="0.0" maxX="150" maxY="0.0"/>
                                 <state key="normal" title="Two Players">
-                                    <color key="titleColor" name="AccentColor"/>
+                                    <color key="titleColor" red="0.85034816199999996" green="1" blue="0.90583877160000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eU6-LL-SzZ"/>
+                                    <action selector="twoPlayersButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jkb-rs-M4M"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Bz-U3-blL">
                                 <rect key="frame" x="136" y="293" width="144" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                 <inset key="titleEdgeInsets" minX="77" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="200" maxY="0.0"/>
                                 <state key="normal" title="Play">
-                                    <color key="titleColor" name="AccentColor"/>
+                                    <color key="titleColor" red="0.85034816199999996" green="1" blue="0.90583877160000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfu-sX-sID">
@@ -53,7 +52,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" systemColor="systemGreenColor"/>
-                                <size key="shadowOffset" width="3" height="2"/>
+                                <size key="shadowOffset" width="6" height="4"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -61,10 +60,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="HcP-G9-h4W"/>
                     <connections>
-                        <outlet property="playButton" destination="3Bz-U3-blL" id="F1g-zV-SZj"/>
+                        <outlet property="playButton" destination="3Bz-U3-blL" id="kxt-Sl-zBw"/>
                         <outlet property="threeInRow" destination="dfu-sX-sID" id="5qa-Fh-I5n"/>
-                        <outlet property="twoPlayersButton" destination="uk9-Qc-W2e" id="uwa-Pn-Sdh"/>
-                        <segue destination="Bnc-Td-KiX" kind="show" identifier="segueToBoard" id="rMr-KO-D5j"/>
+                        <outlet property="twoPlayersButton" destination="uk9-Qc-W2e" id="6qB-lj-dE9"/>
+                        <segue destination="Bnc-Td-KiX" kind="show" identifier="segueToPlayerName" id="rMr-KO-D5j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -118,6 +117,9 @@
                                 <state key="normal" title="START NEW GAME">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="startNewGame:" destination="Bnc-Td-KiX" eventType="touchUpInside" id="Yvo-0W-hZw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="717-BY-hkl"/>
@@ -125,9 +127,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="LUt-4t-ReO"/>
                     <connections>
-                        <outlet property="button" destination="Ncu-bo-BwW" id="C1y-Qm-GWk"/>
                         <outlet property="player1Name" destination="sld-Bw-ja9" id="5hR-Ya-7vr"/>
                         <outlet property="player2Name" destination="Z4Y-9H-Sry" id="Xo8-Ap-oL6"/>
+                        <outlet property="startNewGameButton" destination="Ncu-bo-BwW" id="De3-zj-fWu"/>
+                        <segue destination="Fql-Qg-p2L" kind="show" identifier="segueToGame" id="jkd-PS-Kv9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAW-lw-j9l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -155,76 +158,142 @@
         <!--Two Player Game View Controller-->
         <scene sceneID="GAx-ZH-UAX">
             <objects>
-                <viewController id="Fql-Qg-p2L" customClass="TwoPlayerGameViewController" customModule="ThreeInRow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="segueToGame" id="Fql-Qg-p2L" customClass="TwoPlayerGameViewController" customModule="ThreeInRow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L6i-pI-o2n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Board" translatesAutoresizingMaskIntoConstraints="NO" id="BkE-NE-c5D">
-                                <rect key="frame" x="10" y="83" width="395" height="544"/>
+                                <rect key="frame" x="10" y="183" width="384" height="420"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G5y-9d-doA">
-                                <rect key="frame" x="157" y="432" width="100" height="100"/>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G5y-9d-doA">
+                                <rect key="frame" x="152" y="467" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="crossButtonPressed:" destination="Fql-Qg-p2L" eventType="touchUpInside" id="40K-4p-Jts"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Lw-xS-e92">
-                                <rect key="frame" x="20" y="433" width="100" height="100"/>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Lw-xS-e92">
+                                <rect key="frame" x="18" y="467" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="crossButtonPressed:" destination="Fql-Qg-p2L" eventType="touchUpInside" id="9Su-OI-QKl"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jd1-Vq-eyL">
-                                <rect key="frame" x="294" y="304" width="100" height="100"/>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jd1-Vq-eyL">
+                                <rect key="frame" x="280" y="333" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="crossButtonPressed:" destination="Fql-Qg-p2L" eventType="touchUpInside" id="bpJ-ia-PbI"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbQ-3q-Vow">
-                                <rect key="frame" x="157" y="305" width="100" height="100"/>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxv-kK-60l">
+                                <rect key="frame" x="20" y="339" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="crossButtonPressed:" destination="Fql-Qg-p2L" eventType="touchUpInside" id="ai7-OB-LBI"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxv-kK-60l">
-                                <rect key="frame" x="20" y="314" width="100" height="100"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zD-0N-qR3">
+                                <rect key="frame" x="285" y="208" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="crossButtonPressed:" destination="Fql-Qg-p2L" eventType="touchUpInside" id="gl9-Wi-uJC"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zD-0N-qR3">
-                                <rect key="frame" x="294" y="182" width="100" height="100"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WW-Sw-eeV">
+                                <rect key="frame" x="156" y="208" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="crossButtonPressed:" destination="Fql-Qg-p2L" eventType="touchUpInside" id="lbM-eN-u8O"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WW-Sw-eeV">
-                                <rect key="frame" x="157" y="174" width="100" height="100"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLs-Za-LQO">
+                                <rect key="frame" x="21" y="208" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="crossButtonPressed:" destination="Fql-Qg-p2L" eventType="touchUpInside" id="Q7m-yj-wOH"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLs-Za-LQO">
-                                <rect key="frame" x="20" y="174" width="100" height="100"/>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tiv-0E-WyJ">
+                                <rect key="frame" x="280" y="467" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="crossButtonPressed:" destination="Fql-Qg-p2L" eventType="touchUpInside" id="Mwi-X6-csG"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tiv-0E-WyJ">
-                                <rect key="frame" x="294" y="433" width="100" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7f-GZ-R0N">
+                                <rect key="frame" x="0.0" y="611" width="227" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Cross"/>
+                                <color key="backgroundColor" red="0.2238802074" green="1" blue="0.31689977419999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.85034816199999996" green="1" blue="0.90583877160000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gio-YW-KY3">
+                                <rect key="frame" x="187" y="677" width="227" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.85034816199999996" green="1" blue="0.90583877160000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAgainButton:" destination="Fql-Qg-p2L" eventType="touchUpInside" id="WWD-mR-UHU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbQ-3q-Vow">
+                                <rect key="frame" x="152" y="333" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="crossButtonPressed:" destination="Fql-Qg-p2L" eventType="touchUpInside" id="T8j-vt-T8G"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dy8-cg-4wv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="LzN-tV-Pmk"/>
+                    <connections>
+                        <outlet property="playAgainButton" destination="gio-YW-KY3" id="7tl-WN-f7B"/>
+                        <outlet property="winingPlayerLabel" destination="c7f-GZ-R0N" id="pXd-xS-xL1"/>
+                        <outletCollection property="crossButtons" destination="XLs-Za-LQO" collectionClass="NSMutableArray" id="zv6-Xh-o5t"/>
+                        <outletCollection property="crossButtons" destination="7WW-Sw-eeV" collectionClass="NSMutableArray" id="Kjf-Jx-5HO"/>
+                        <outletCollection property="crossButtons" destination="7zD-0N-qR3" collectionClass="NSMutableArray" id="db9-Lb-Axj"/>
+                        <outletCollection property="crossButtons" destination="fxv-kK-60l" collectionClass="NSMutableArray" id="Txz-A7-Zz9"/>
+                        <outletCollection property="crossButtons" destination="kbQ-3q-Vow" collectionClass="NSMutableArray" id="LY3-0c-cuY"/>
+                        <outletCollection property="crossButtons" destination="jd1-Vq-eyL" collectionClass="NSMutableArray" id="Frp-OS-l0k"/>
+                        <outletCollection property="crossButtons" destination="2Lw-xS-e92" collectionClass="NSMutableArray" id="Pzu-C3-hQP"/>
+                        <outletCollection property="crossButtons" destination="G5y-9d-doA" collectionClass="NSMutableArray" id="U86-wg-T0z"/>
+                        <outletCollection property="crossButtons" destination="Tiv-0E-WyJ" collectionClass="NSMutableArray" id="84a-MH-DZA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEv-X7-c7T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="9aW-BU-kPX">
+                    <rect key="frame" x="0.0" y="0.0" width="227" height="58"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" red="0.85034816199999996" green="1" blue="0.90583877160000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
             </objects>
-            <point key="canvasLocation" x="165" y="-774"/>
+            <point key="canvasLocation" x="163.768115942029" y="-774.10714285714278"/>
         </scene>
     </scenes>
     <resources>
         <image name="Board" width="1078" height="1068"/>
-        <image name="Cross" width="300" height="297"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -237,8 +306,11 @@
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
