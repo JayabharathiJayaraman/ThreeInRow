@@ -12,6 +12,8 @@ class TwoPlayerNameViewController: UIViewController {
     @IBOutlet weak var player1Name: UITextField!
     @IBOutlet weak var player2Name: UITextField!
     
+    @IBOutlet weak var enterPlayer1Name: UITextField!
+    @IBOutlet weak var enterPlayer2Name: UITextField!
     @IBOutlet weak var startNewGameButton: UIButton!
     
     let segueToGame = "segueToGame"
@@ -38,5 +40,14 @@ class TwoPlayerNameViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    //pass player names to another view controller
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? TwoPlayerGameViewController{
+            controller.player1Name = enterPlayer1Name.text
+            controller.player2Name = enterPlayer2Name.text
+            
+        }
+    }
 }
