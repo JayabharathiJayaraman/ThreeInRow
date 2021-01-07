@@ -16,18 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uk9-Qc-W2e">
-                                <rect key="frame" x="136" y="428" width="144" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.22727397000137783" green="0.18841334224687944" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="imageEdgeInsets" minX="25" minY="0.0" maxX="150" maxY="0.0"/>
-                                <state key="normal" title="Two Players">
-                                    <color key="titleColor" red="0.85034816199999996" green="1" blue="0.90583877160000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="twoPlayersButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jkb-rs-M4M"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Bz-U3-blL">
                                 <rect key="frame" x="136" y="293" width="144" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -54,6 +42,20 @@
                                 <color key="shadowColor" systemColor="systemGreenColor"/>
                                 <size key="shadowOffset" width="6" height="4"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uk9-Qc-W2e">
+                                <rect key="frame" x="132" y="424" width="144" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.22727397000137783" green="0.18841334224687944" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <inset key="titleEdgeInsets" minX="31" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="32" minY="0.0" maxX="150" maxY="0.0"/>
+                                <state key="normal" title="2 Players">
+                                    <color key="titleColor" red="0.85034816199999996" green="1" blue="0.90583877160000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="twoPlayersButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jkb-rs-M4M"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -261,12 +263,18 @@
                                     <action selector="crossButtonPressed:" destination="Fql-Qg-p2L" eventType="touchUpInside" id="T8j-vt-T8G"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dd9-ze-Rpk">
+                                <rect key="frame" x="21" y="104" width="373" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dy8-cg-4wv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="LzN-tV-Pmk"/>
                     <connections>
+                        <outlet property="gameDetailsTableView" destination="dd9-ze-Rpk" id="yOI-ar-BoM"/>
                         <outlet property="playAgainButton" destination="gio-YW-KY3" id="7tl-WN-f7B"/>
                         <outlet property="winingPlayerLabel" destination="c7f-GZ-R0N" id="pXd-xS-xL1"/>
                         <outletCollection property="crossButtons" destination="XLs-Za-LQO" collectionClass="NSMutableArray" id="zv6-Xh-o5t"/>

@@ -15,8 +15,10 @@
 		E23B962D259178DA0030D019 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23B962B259178DA0030D019 /* LaunchScreen.storyboard */; };
 		E23B9638259178DA0030D019 /* ThreeInRowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23B9637259178DA0030D019 /* ThreeInRowTests.swift */; };
 		E23B9643259178DA0030D019 /* ThreeInRowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23B9642259178DA0030D019 /* ThreeInRowUITests.swift */; };
-		E23B96552592BDD50030D019 /* twoPlayerNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23B96532592BDD50030D019 /* twoPlayerNameViewController.swift */; };
-		E23B9661259959B50030D019 /* twoPlayerGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23B9660259959B50030D019 /* twoPlayerGameViewController.swift */; };
+		E23B96552592BDD50030D019 /* TwoPlayerNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23B96532592BDD50030D019 /* TwoPlayerNameViewController.swift */; };
+		E23B9661259959B50030D019 /* TwoPlayerGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23B9660259959B50030D019 /* TwoPlayerGameViewController.swift */; };
+		E2ADDB8E25A3E58500ABC253 /* GameDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADDB8C25A3E58500ABC253 /* GameDetailsTableViewCell.swift */; };
+		E2ADDB8F25A3E58500ABC253 /* GameDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2ADDB8D25A3E58500ABC253 /* GameDetailsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +53,10 @@
 		E23B963E259178DA0030D019 /* ThreeInRowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeInRowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23B9642259178DA0030D019 /* ThreeInRowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeInRowUITests.swift; sourceTree = "<group>"; };
 		E23B9644259178DA0030D019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E23B96532592BDD50030D019 /* twoPlayerNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twoPlayerNameViewController.swift; sourceTree = "<group>"; };
-		E23B9660259959B50030D019 /* twoPlayerGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twoPlayerGameViewController.swift; sourceTree = "<group>"; };
+		E23B96532592BDD50030D019 /* TwoPlayerNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerNameViewController.swift; sourceTree = "<group>"; };
+		E23B9660259959B50030D019 /* TwoPlayerGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerGameViewController.swift; sourceTree = "<group>"; };
+		E2ADDB8C25A3E58500ABC253 /* GameDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		E2ADDB8D25A3E58500ABC253 /* GameDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameDetailsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +111,10 @@
 				E23B9622259178D80030D019 /* SceneDelegate.swift */,
 				E23B9624259178D80030D019 /* ViewController.swift */,
 				E23B9626259178D80030D019 /* Main.storyboard */,
-				E23B9660259959B50030D019 /* twoPlayerGameViewController.swift */,
-				E23B96532592BDD50030D019 /* twoPlayerNameViewController.swift */,
+				E2ADDB8C25A3E58500ABC253 /* GameDetailsTableViewCell.swift */,
+				E2ADDB8D25A3E58500ABC253 /* GameDetailsTableViewCell.xib */,
+				E23B9660259959B50030D019 /* TwoPlayerGameViewController.swift */,
+				E23B96532592BDD50030D019 /* TwoPlayerNameViewController.swift */,
 				E23B9629259178DA0030D019 /* Assets.xcassets */,
 				E23B962B259178DA0030D019 /* LaunchScreen.storyboard */,
 				E23B962E259178DA0030D019 /* Info.plist */,
@@ -237,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2ADDB8F25A3E58500ABC253 /* GameDetailsTableViewCell.xib in Resources */,
 				E23B962D259178DA0030D019 /* LaunchScreen.storyboard in Resources */,
 				E23B962A259178DA0030D019 /* Assets.xcassets in Resources */,
 				E23B9628259178D80030D019 /* Main.storyboard in Resources */,
@@ -264,11 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2ADDB8E25A3E58500ABC253 /* GameDetailsTableViewCell.swift in Sources */,
 				E23B9625259178D80030D019 /* ViewController.swift in Sources */,
-				E23B9661259959B50030D019 /* twoPlayerGameViewController.swift in Sources */,
+				E23B9661259959B50030D019 /* TwoPlayerGameViewController.swift in Sources */,
 				E23B9621259178D80030D019 /* AppDelegate.swift in Sources */,
 				E23B9623259178D80030D019 /* SceneDelegate.swift in Sources */,
-				E23B96552592BDD50030D019 /* twoPlayerNameViewController.swift in Sources */,
+				E23B96552592BDD50030D019 /* TwoPlayerNameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

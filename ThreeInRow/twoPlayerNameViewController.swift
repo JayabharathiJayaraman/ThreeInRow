@@ -20,7 +20,7 @@ class TwoPlayerNameViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+       
         player1Name.font = UIFont(name: "Chalkduster", size: player1Name.font!.pointSize)
         player2Name.font = UIFont(name: "Chalkduster", size: player2Name.font!.pointSize)
         // Do any additional setup after loading the view.

@@ -67,9 +67,6 @@ class ViewController: UIViewController {
             buttonName.layer.shadowRadius = 12
             buttonName.layer.shadowOffset = CGSize(width: 1, height: 1)
             
-            buttonName.setImage(UIImage(named:"twoPlayer.png"), for: .normal)
-            buttonName.imageEdgeInsets = UIEdgeInsets(top: 6,left: 100,bottom: 6,right: 14)
-            buttonName.titleEdgeInsets = UIEdgeInsets(top: 0,left: -30,bottom: 0,right: 35)
             
         }
     
