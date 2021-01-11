@@ -19,6 +19,10 @@
 		E23B9661259959B50030D019 /* TwoPlayerGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23B9660259959B50030D019 /* TwoPlayerGameViewController.swift */; };
 		E2ADDB8E25A3E58500ABC253 /* GameDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ADDB8C25A3E58500ABC253 /* GameDetailsTableViewCell.swift */; };
 		E2ADDB8F25A3E58500ABC253 /* GameDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2ADDB8D25A3E58500ABC253 /* GameDetailsTableViewCell.xib */; };
+		E2BFC8C125ABCC5B006DF678 /* GameDetailsAgainstComputerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BFC8BF25ABCC5B006DF678 /* GameDetailsAgainstComputerTableViewCell.swift */; };
+		E2BFC8C225ABCC5B006DF678 /* GameDetailsAgainstComputerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2BFC8C025ABCC5B006DF678 /* GameDetailsAgainstComputerTableViewCell.xib */; };
+		E2F775B625AA711300721B8B /* PlayWithComputerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F775B525AA711300721B8B /* PlayWithComputerViewController.swift */; };
+		E2F775BE25AA77DC00721B8B /* PlayWithComputerPlayerNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F775BD25AA77DC00721B8B /* PlayWithComputerPlayerNameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		E23B9660259959B50030D019 /* TwoPlayerGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerGameViewController.swift; sourceTree = "<group>"; };
 		E2ADDB8C25A3E58500ABC253 /* GameDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		E2ADDB8D25A3E58500ABC253 /* GameDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		E2BFC8BF25ABCC5B006DF678 /* GameDetailsAgainstComputerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsAgainstComputerTableViewCell.swift; sourceTree = "<group>"; };
+		E2BFC8C025ABCC5B006DF678 /* GameDetailsAgainstComputerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameDetailsAgainstComputerTableViewCell.xib; sourceTree = "<group>"; };
+		E2F775B525AA711300721B8B /* PlayWithComputerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayWithComputerViewController.swift; sourceTree = "<group>"; };
+		E2F775BD25AA77DC00721B8B /* PlayWithComputerPlayerNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayWithComputerPlayerNameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +115,15 @@
 		E23B961F259178D80030D019 /* ThreeInRow */ = {
 			isa = PBXGroup;
 			children = (
+				E2F775BD25AA77DC00721B8B /* PlayWithComputerPlayerNameViewController.swift */,
 				E23B9620259178D80030D019 /* AppDelegate.swift */,
 				E23B9622259178D80030D019 /* SceneDelegate.swift */,
 				E23B9624259178D80030D019 /* ViewController.swift */,
 				E23B9626259178D80030D019 /* Main.storyboard */,
+				E2F775B525AA711300721B8B /* PlayWithComputerViewController.swift */,
 				E2ADDB8C25A3E58500ABC253 /* GameDetailsTableViewCell.swift */,
+				E2BFC8BF25ABCC5B006DF678 /* GameDetailsAgainstComputerTableViewCell.swift */,
+				E2BFC8C025ABCC5B006DF678 /* GameDetailsAgainstComputerTableViewCell.xib */,
 				E2ADDB8D25A3E58500ABC253 /* GameDetailsTableViewCell.xib */,
 				E23B9660259959B50030D019 /* TwoPlayerGameViewController.swift */,
 				E23B96532592BDD50030D019 /* TwoPlayerNameViewController.swift */,
@@ -243,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2BFC8C225ABCC5B006DF678 /* GameDetailsAgainstComputerTableViewCell.xib in Resources */,
 				E2ADDB8F25A3E58500ABC253 /* GameDetailsTableViewCell.xib in Resources */,
 				E23B962D259178DA0030D019 /* LaunchScreen.storyboard in Resources */,
 				E23B962A259178DA0030D019 /* Assets.xcassets in Resources */,
@@ -277,6 +290,9 @@
 				E23B9621259178D80030D019 /* AppDelegate.swift in Sources */,
 				E23B9623259178D80030D019 /* SceneDelegate.swift in Sources */,
 				E23B96552592BDD50030D019 /* TwoPlayerNameViewController.swift in Sources */,
+				E2F775B625AA711300721B8B /* PlayWithComputerViewController.swift in Sources */,
+				E2BFC8C125ABCC5B006DF678 /* GameDetailsAgainstComputerTableViewCell.swift in Sources */,
+				E2F775BE25AA77DC00721B8B /* PlayWithComputerPlayerNameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -50,7 +50,7 @@ class TwoPlayerGameViewController: UIViewController, UITableViewDataSource {
         playAgainButton.layer.cornerRadius = 7
         playAgainButton.titleLabel?.font =  UIFont(name: "Chalkduster", size: 20)
         if let player1Name = player1Name{
-        showPlayerTurnToast(message: "\(player1Name) 's turn")
+        showPlayerTurnToast(message: "\(player1Name)'s turn")
         }
         scoreLabel1.text = player1Name
         scoreLabel2.text = player2Name
@@ -62,8 +62,8 @@ class TwoPlayerGameViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: personCellId, for: indexPath) as! GameDetailsTableViewCell
         
-        cell.playerName.text =  player1Name
-        cell.player2Name.text = player2Name
+        cell.playerName.text =  player1Name! + ":"
+        cell.player2Name.text = player2Name! + ":"
        
                 return cell
     }
@@ -71,7 +71,7 @@ class TwoPlayerGameViewController: UIViewController, UITableViewDataSource {
     @IBAction func playAgainButton(_ sender: Any) {
         buttonsClickable()
         if let player2Name = player2Name{
-        showPlayerTurnToast(message: "\(player2Name) 's turn")
+        showPlayerTurnToast(message: "\(player2Name)'s turn")
         }
         gameState = [0,0,0,0,0,0,0,0,0]
         gameIsActive = true
@@ -82,7 +82,7 @@ class TwoPlayerGameViewController: UIViewController, UITableViewDataSource {
         for i in 1...9
         {
             if let player1Name = player1Name{
-            showPlayerTurnToast(message: "\(player1Name) 's turn")
+            showPlayerTurnToast(message: "\(player1Name)'s turn")
             }
             let button = view.viewWithTag(i) as! UIButton
             button.setImage(nil, for: UIControl.State())
@@ -99,14 +99,14 @@ class TwoPlayerGameViewController: UIViewController, UITableViewDataSource {
             {
                 sender.setImage(UIImage(named: "Red.png"), for: UIControl.State())
                 if let player2Name = player2Name{
-                showPlayerTurnToast(message: "\(player2Name) 's turn")
+                showPlayerTurnToast(message: "\(player2Name)'s turn")
                 }
                 activePlayer = 2
         
             } else{
                 sender.setImage(UIImage(named: "Yellow.png"), for: UIControl.State())
                 if let player1Name = player1Name{
-                showPlayerTurnToast(message: "\(player1Name) 's turn")
+                showPlayerTurnToast(message: "\(player1Name)'s turn")
                 }
                 activePlayer = 1
             }
@@ -186,7 +186,7 @@ class TwoPlayerGameViewController: UIViewController, UITableViewDataSource {
         toastLabel.clipsToBounds = true
         self.view.addSubview(toastLabel)
         
-        UIView.animate(withDuration: 4.0, delay: 1.0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 2.0, delay: 1.0, options: .curveEaseInOut, animations: {
             toastLabel.alpha = 0.0
         }) { (isCompleted) in
             toastLabel.removeFromSuperview()

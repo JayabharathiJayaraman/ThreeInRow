@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var twoPlayersButton: UIButton!
     let segueToPlayerName = "segueToPlayerName"
-    
+    let segueToComputerGame = "segueToComputerGame"
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +29,11 @@ class ViewController: UIViewController {
 
     }
     
-
+    @IBAction func playButton(_ sender: UIButton) {
+        performSegue(withIdentifier: segueToComputerGame, sender: self)
+    }
+    
+    
     @IBAction func twoPlayersButton(_ sender: UIButton) {
         performSegue(withIdentifier: segueToPlayerName, sender: self)
     }

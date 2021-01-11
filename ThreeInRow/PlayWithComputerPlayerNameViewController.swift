@@ -1,42 +1,35 @@
 //
-//  BoardViewController.swift
+//  PlayWithComputerPlayerNameViewController.swift
 //  ThreeInRow
 //
-//  Created by Jayabharathi Jayaraman on 2020-12-23.
+//  Created by Jayabharathi Jayaraman on 2021-01-10.
 //
 
 import UIKit
 
-class TwoPlayerNameViewController: UIViewController {
-
-    @IBOutlet weak var player1Name: UILabel!
-    @IBOutlet weak var player2Name: UILabel!
-    
-    @IBOutlet weak var enterPlayer1Name: UITextField!
-    @IBOutlet weak var enterPlayer2Name: UITextField!
-    @IBOutlet weak var startNewGameButton: UIButton!
-    
-    let segueToGame = "segueToGame"
+class PlayWithComputerPlayerNameViewController: UIViewController {
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var playerNameTextField: UITextField!
+    @IBOutlet weak var cardView: UIView!
+    let segueToPlayWithComputer = "segueToPlayWithComputer"
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        player1Name.font = UIFont(name: "Chalkduster", size: player1Name.font.pointSize)
-        player2Name.font = UIFont(name: "Chalkduster", size: player1Name.font.pointSize)
-        
+        setupUI()
         // Do any additional setup after loading the view.
-        startNewGameButton.titleLabel?.font =  UIFont(name: "Chalkduster", size: 20)
     }
-
-    @IBAction func startNewGame(_ sender: Any) {
-        if let text = enterPlayer1Name.text, !text.isEmpty
+    
+    
+    @IBAction func playButtonClickable(_ sender: UIButton) {
+        if let text = playerNameTextField.text, !text.isEmpty
         {
-            if let text = enterPlayer2Name.text, !text.isEmpty
-            {
-                performSegue(withIdentifier: segueToGame, sender: self)
-            }
+            
+            performSegue(withIdentifier: segueToPlayWithComputer, sender: self)
+            
         }
         showPlayerTurnToast(message: "Enter player name")
+        
     }
+    
     func showPlayerTurnToast(message: String)
     {
         let toastLabel = UILabel(frame: CGRect(x: self.view.frame.width/2-75, y: self.view.frame.height - 100, width: 150, height: 40))
@@ -56,7 +49,14 @@ class TwoPlayerNameViewController: UIViewController {
         
     }
  }
-    
+    func setupUI() {
+            playButton.layer.cornerRadius = 10
+            cardView.layer.cornerRadius = 10
+            cardView.layer.shadowOpacity = 0.4
+            cardView.layer.shadowColor = UIColor.black.cgColor
+            cardView.layer.shadowRadius = 10
+            cardView.layer.shadowOffset = .zero
+        }
     /*
     // MARK: - Navigation
 
@@ -68,12 +68,11 @@ class TwoPlayerNameViewController: UIViewController {
     */
     
     //pass player names to another view controller
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let controller = segue.destination as? TwoPlayerGameViewController{
-            controller.player1Name = enterPlayer1Name.text
-            controller.player2Name = enterPlayer2Name.text
-            
+        
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if let controller = segue.destination as? PlayWithComputerViewController{
+                controller.playerName = playerNameTextField.text
+            }
         }
-    }
+    
 }
