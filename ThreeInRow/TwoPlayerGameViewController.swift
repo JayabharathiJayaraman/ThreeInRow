@@ -46,7 +46,8 @@ class TwoPlayerGameViewController: UIViewController, UITableViewDataSource {
         gameDetailsTableView.register(personCell, forCellReuseIdentifier: personCellId)
                 
         // Do any additional setup after loading the view.
-        winingPlayerLabel.font = UIFont(name: "ChalkboardSE-Bold", size: winingPlayerLabel.font.pointSize)
+        winingPlayerLabel.layer.cornerRadius = 7
+        winingPlayerLabel.font = UIFont(name: "Chalkduster", size: 20)
         playAgainButton.layer.cornerRadius = 7
         playAgainButton.titleLabel?.font =  UIFont(name: "Chalkduster", size: 20)
         if let player1Name = player1Name{

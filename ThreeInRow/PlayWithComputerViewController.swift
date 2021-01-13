@@ -53,6 +53,10 @@ class PlayWithComputerViewController: UIViewController, UITableViewDataSource {
         if let playerName = playerName{
         showPlayerTurnToast(message: "\(playerName)'s turn")
         }
+        winingPlayerLabel.layer.cornerRadius = 7
+        winingPlayerLabel.font = UIFont(name: "Chalkduster", size: 20)
+        playAgainButton.layer.cornerRadius = 7
+        playAgainButton.titleLabel?.font =  UIFont(name: "Chalkduster", size: 20)
     }
     
     @IBAction func playAgain(_ sender: Any) {
@@ -83,11 +87,13 @@ class PlayWithComputerViewController: UIViewController, UITableViewDataSource {
         let selectedImage = getImage(from: sender.name ?? "")
         makeChoice(selectedImage)
          playerChoices.append(Image(rawValue: sender.name!)!)
-                checkIfWon()
+             let r = checkIfWon()
+        if r == false {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.computerPlay()
         }
         }
+    }
     func computerPlay() {
             var availableSpaces = [UIImageView]()
             var availableImages = [Image]()
@@ -107,14 +113,14 @@ class PlayWithComputerViewController: UIViewController, UITableViewDataSource {
           checkIfWon()
         }
     
-    func checkIfWon() {
+    func checkIfWon() -> Bool{
         var correct = [[Image]]()
         let firstRow: [Image] = [.one, .two, .three]
         let secondRow: [Image] = [.four, .five, .six]
         let thirdRow: [Image] = [.seven, .eight, .nine]
                 
         let firstCol: [Image] = [.one, .four, .seven]
-        let secondCol: [Image] = [.two, .five, .six]
+        let secondCol: [Image] = [.two, .five, .eight]
         let thirdCol: [Image] = [.three, .six, .nine]
                 
         let backwardSlash: [Image] = [.one, .five, .nine]
@@ -140,7 +146,7 @@ class PlayWithComputerViewController: UIViewController, UITableViewDataSource {
                         winingPlayerLabel.text = "\(playerName) has Won!"
                         imagesUnclickable()
                         computerNoPlay()
-                            
+                            return true
                         }
                         break
                     } else if computerMatch == valid.count {
@@ -158,9 +164,11 @@ class PlayWithComputerViewController: UIViewController, UITableViewDataSource {
                         break
                     }
                 }
+        return false
     }
     
     func computerNoPlay() {
+     
         lastValue = "o"
             playerChoices = []
             computerChoices = []
