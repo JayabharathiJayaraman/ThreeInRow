@@ -49,6 +49,10 @@ class PlayWithComputerViewController: UIViewController, UITableViewDataSource {
         createTap(on: image9, type: .nine)
         
         playerNameLabel.text = playerName
+        
+        if let playerName = playerName{
+        showPlayerTurnToast(message: "\(playerName)'s turn")
+        }
     }
     
     @IBAction func playAgain(_ sender: Any) {
@@ -102,6 +106,7 @@ class PlayWithComputerViewController: UIViewController, UITableViewDataSource {
             computerChoices.append(availableImages[randIndex])
           checkIfWon()
         }
+    
     func checkIfWon() {
         var correct = [[Image]]()
         let firstRow: [Image] = [.one, .two, .three]
@@ -133,7 +138,9 @@ class PlayWithComputerViewController: UIViewController, UITableViewDataSource {
                         winingPlayerLabel.isHidden = false
                         if let playerName = playerName {
                         winingPlayerLabel.text = "\(playerName) has Won!"
-                            imagesUnclickable()
+                        imagesUnclickable()
+                        computerNoPlay()
+                            
                         }
                         break
                     } else if computerMatch == valid.count {
@@ -141,7 +148,6 @@ class PlayWithComputerViewController: UIViewController, UITableViewDataSource {
                         playAgainButton.isHidden = false
                         winingPlayerLabel.isHidden = false
                         winingPlayerLabel.text = "Computer has Won!"
-                        computerNoPlay()
                         imagesUnclickable()
                         break
                     } else if computerChoices.count + playerChoices.count == 9 {
@@ -155,24 +161,11 @@ class PlayWithComputerViewController: UIViewController, UITableViewDataSource {
     }
     
     func computerNoPlay() {
-            var availableSpaces = [UIImageView]()
-            var availableImages = [Image]()
-            for name in Image.allCases {
-                let image = getImage(from: name.rawValue)
-                if image.image == nil {
-                    availableSpaces.append(image)
-                    availableImages.append(name)
-                }
-            }
-            
-            guard availableImages.count > 0 else { return }
-            
-            let randIndex = 0
-            makeChoice(availableSpaces[randIndex])
-            computerChoices.append(availableImages[randIndex])
-          checkIfWon()
+        lastValue = "o"
+            playerChoices = []
+            computerChoices = []
         }
-    
+
     func imagesUnclickable(){
         image1.isUserInteractionEnabled = false
         image2.isUserInteractionEnabled = false
@@ -218,7 +211,7 @@ class PlayWithComputerViewController: UIViewController, UITableViewDataSource {
         toastLabel.clipsToBounds = true
         self.view.addSubview(toastLabel)
         
-        UIView.animate(withDuration: 3.0, delay: 1.0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 1.0, delay: 2.0, options: .curveEaseInOut, animations: {
             toastLabel.alpha = 0.0
         }) { (isCompleted) in
             toastLabel.removeFromSuperview()
@@ -229,6 +222,9 @@ class PlayWithComputerViewController: UIViewController, UITableViewDataSource {
     func makeChoice(_ selectedImage: UIImageView) {
             guard selectedImage.image == nil else { return }
             if lastValue == "x" {
+                if let playerName = playerName{
+                showPlayerTurnToast(message: "\(playerName)'s turn")
+                }
                 selectedImage.image = UIImage(named: "Yellow.png")
                 lastValue = "o"
             } else {
