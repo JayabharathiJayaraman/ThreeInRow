@@ -85,6 +85,7 @@ class PlayWithComputerViewController: UIViewController, UITableViewDataSource {
     
     @objc func imageClicked(_ sender: UITapGestureRecognizer){
         let selectedImage = getImage(from: sender.name ?? "")
+        if selectedImage.image == nil{
         makeChoice(selectedImage)
          playerChoices.append(Image(rawValue: sender.name!)!)
              let r = checkIfWon()
@@ -93,6 +94,7 @@ class PlayWithComputerViewController: UIViewController, UITableViewDataSource {
                     self.computerPlay()
         }
         }
+    }
     }
     func computerPlay() {
             var availableSpaces = [UIImageView]()
