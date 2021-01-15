@@ -47,7 +47,7 @@ class PlayWithComputerViewController: UIViewController, UITableViewDataSource {
         createTap(on: image7, type: .seven)
         createTap(on: image8, type: .eight)
         createTap(on: image9, type: .nine)
-        
+       
         playerNameLabel.text = playerName
         
         if let playerName = playerName{
@@ -145,7 +145,6 @@ class PlayWithComputerViewController: UIViewController, UITableViewDataSource {
                         if let playerName = playerName {
                         winingPlayerLabel.text = "\(playerName) has Won!"
                         imagesUnclickable()
-                        computerNoPlay()
                             return true
                         }
                         break
@@ -166,13 +165,6 @@ class PlayWithComputerViewController: UIViewController, UITableViewDataSource {
                 }
         return false
     }
-    
-    func computerNoPlay() {
-     
-        lastValue = "o"
-            playerChoices = []
-            computerChoices = []
-        }
 
     func imagesUnclickable(){
         image1.isUserInteractionEnabled = false
