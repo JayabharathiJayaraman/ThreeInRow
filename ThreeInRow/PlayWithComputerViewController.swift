@@ -94,7 +94,7 @@ class PlayWithComputerViewController: UIViewController, UITableViewDataSource {
                     self.computerPlay()
         }
         }
-    }
+        } else { print("can,t play on the computer move or already played move")}
     }
     func computerPlay() {
             var availableSpaces = [UIImageView]()
